@@ -1,0 +1,284 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Портфолио - TechDesigner</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Roboto', sans-serif; 
+        } 
+        body { 
+            background: #f7f7f7; 
+            color: #333; 
+            line-height: 1.6; 
+            font-size: 16px; 
+            padding: 20px; 
+            animation: fadeInBody 1s ease-out; 
+        } 
+        @keyframes fadeInBody { 
+            from { 
+                opacity: 0; 
+            } 
+            to { 
+                opacity: 1; 
+            } 
+        } 
+        header { 
+            background-color: #333; 
+            color: white; 
+            padding: 10px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: relative; 
+            animation: slideInHeader 0.5s ease-out; 
+        } 
+        @keyframes slideInHeader { 
+            from { 
+                transform: translateY(-100px); 
+                opacity: 0; 
+            } 
+            to { 
+                transform: translateY(0); 
+                opacity: 1; 
+            } 
+        } 
+        .logo { 
+            font-size: 24px; 
+            font-weight: bold; 
+            animation: fadeInLogo 1s ease-out; 
+        } 
+        @keyframes fadeInLogo { 
+            from { 
+                opacity: 0; 
+            } 
+            to { 
+                opacity: 1; 
+            } 
+        } 
+        .nav { 
+            display: flex; 
+            gap: 20px; 
+            animation: fadeInNav 1s ease-out; 
+        } 
+        @keyframes fadeInNav { 
+            from { 
+                opacity: 0; 
+                transform: translateX(50px); 
+            } 
+            to { 
+                opacity: 1; 
+                transform: translateX(0); 
+            } 
+        } 
+        .nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 16px; 
+            padding: 5px 10px; 
+            transition: background-color 0.3s; 
+        } 
+        .nav a:hover { 
+            background-color: #575757; 
+            border-radius: 5px; 
+        } 
+        .burger { 
+            display: none; 
+            cursor: pointer; 
+            flex-direction: column; 
+            gap: 4px; 
+            animation: fadeInBurger 1s ease-out; 
+        } 
+        @keyframes fadeInBurger { 
+            from { 
+                opacity: 0; 
+            } 
+            to { 
+                opacity: 1; 
+            } 
+        } 
+        .burger div { 
+            width: 25px; 
+            height: 3px; 
+            background-color: white; 
+            border-radius: 5px; 
+        } 
+        .menu { 
+            display: flex; 
+            gap: 20px; 
+            animation: fadeInMenu 1s ease-out; 
+        } 
+        @keyframes fadeInMenu { 
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            } 
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            } 
+        } 
+        .menu.show { 
+            display: block; 
+        } 
+        @media (max-width: 768px) { 
+            .nav { 
+                display: none; 
+                width: 100%; 
+                position: absolute; 
+                top: 50px; 
+                left: 0; 
+                background-color: #333; 
+                flex-direction: column; 
+                gap: 10px; 
+                padding: 10px; 
+            } 
+            .nav a { 
+                width: 100%; 
+                text-align: center; 
+            } 
+            .burger { 
+                display: flex; 
+            } 
+            .menu.show { 
+                display: block; 
+            } 
+        } 
+ 
+        section {
+            margin-bottom: 30px; 
+        } 
+        .container { 
+            width: 100%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        } 
+        .portfolio-description, .skills-section, .projects-section { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px; 
+            opacity: 0; 
+            animation: fadeInSection 1s forwards; 
+        } 
+        @keyframes fadeInSection { 
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            } 
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            } 
+        } 
+        .portfolio-description p, .skills-section p, .projects-section p { 
+            font-size: 1.1em; 
+            margin-bottom: 15px; 
+        } 
+        .projects-section { 
+            line-height: 1.8; 
+        } 
+        .button { 
+            display: block; 
+            width: 100%; 
+            padding: 10px; 
+            background-color: #33a1b7; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 1.2em; 
+            cursor: pointer; 
+            text-align: center; 
+            transition: background-color 0.3s, transform 0.3s; 
+        } 
+        .button:hover { 
+            background-color: #1f7b8f; 
+            transform: scale(1.05); 
+        } 
+ 
+        .nav a { 
+            opacity: 0; 
+            animation: fadeInLinks 1s forwards; 
+        } 
+        @keyframes fadeInLinks { 
+            from { 
+                opacity: 0; 
+            } 
+            to { 
+                opacity: 1; 
+            } 
+        } 
+        .nav a:nth-child(1) { 
+            animation-delay: 0.2s; 
+        } 
+        .nav a:nth-child(2) { 
+            animation-delay: 0.4s; 
+        } 
+        .nav a:nth-child(3) { 
+            animation-delay: 0.6s; 
+        } 
+ 
+        .button { 
+            transform: translateY(10px); 
+            opacity: 0; 
+            animation: slideUpButton 1s forwards; 
+        } 
+        @keyframes slideUpButton { 
+            from { 
+                transform: translateY(10px); 
+                opacity: 0; 
+            } 
+            to { 
+                transform: translateY(0); 
+                opacity: 1; 
+            } 
+        } 
+    </style> 
+</head> 
+<body> 
+ 
+    <header> 
+        <div class="logo">S-Company</div> 
+        <nav class="nav" id="nav"> 
+            <a href="index.html">Main</a> 
+            <a href="aboutus.html">About Me</a> 
+            <a href="catalog.html">Catalog</a> 
+            <a href="contact.html">Contact</a> 
+        </nav> 
+        <div class="burger" onclick="toggleMenu()"> 
+            <div></div> 
+            <div></div> 
+            <div></div> 
+        </div> 
+        <div class="menu" id="menu"> 
+            <a href="index.html"></a> 
+            <a href="aboutus.html"></a> 
+            <a href="catalog.html"></a> 
+            <a href="contact.html"></a> 
+        </div> 
+    </header> 
+ 
+    <script> 
+        function toggleMenu() { 
+            const menu = document.getElementById('menu'); 
+            menu.classList.toggle('show'); 
+        } 
+    </script> 
+ 
+    <div class="container"> 
+        <header> 
+            <h1>Портфолио</h1> 
+        </header> 
+ 
+        <section class="portfolio-description"> 
+            <h2>Обо мне</h2> 
+            <p>Я — разработчик с многолетним опытом работы в области веб-дизайна и фронтенд-разработки. Мое увлечение технологиями началось еще в школьные годы, когда я начал изучать основы программирования...</p> 
+            <p>С тех пор я работал над множеством различных проектов, включая создание интерактивных сайтов, улучшение пользовательских интерфейсов и разработку адаптивных решений для различных устройств...</p> 
+            <p>Моя цель — создавать функциональные, красивые и удобные интерфейсы, которые помогают пользователям достигать своих целей быстро и легко...</p> 
+        </sectio

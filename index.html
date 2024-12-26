@@ -1,0 +1,231 @@
+<!DOCTYPE html> 
+<html lang="ru"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>TechDesign - Продажа девайсов с красивым дизайном и кодом</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <style> 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Roboto', sans-serif; 
+        } 
+        body { 
+            background: #f7f7f7; 
+            color: #333; 
+            line-height: 1.6; 
+            font-size: 16px; 
+             
+        } 
+        header { 
+            background-color: #333; 
+            color: white; 
+            padding: 10px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: relative; 
+        } 
+        .logo { 
+            font-size: 24px; 
+            font-weight: bold; 
+        } 
+        .nav { 
+            display: flex; 
+            gap: 20px; 
+        } 
+        .nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-size: 16px; 
+            padding: 5px 10px; 
+            transition: background-color 0.3s; 
+        } 
+        .nav a:hover { 
+            background-color: #575757; 
+            border-radius: 5px; 
+        } 
+        .burger { 
+            display: none; 
+            cursor: pointer; 
+            flex-direction: column; 
+            gap: 4px; 
+        } 
+        .burger div { 
+            width: 25px; 
+            height: 3px; 
+            background-color: white; 
+            border-radius: 5px; 
+        } 
+        .menu { 
+            display: flex; 
+            gap: 20px; 
+        } 
+        .menu.show { 
+            display: block; 
+        } 
+        @media (max-width: 768px) { 
+            .nav { 
+                display: none; 
+                width: 100%; 
+                position: absolute; 
+                top: 50px; 
+                left: 0; 
+                background-color: #333; 
+                flex-direction: column; 
+                gap: 10px; 
+                padding: 10px; 
+            } 
+            .nav a { 
+                width: 100%; 
+                text-align: center; 
+            } 
+            .burger { 
+                display: flex; 
+            } 
+            .menu.show { 
+                display: block; 
+            } 
+        } 
+ 
+        section { 
+            margin-bottom: 30px; 
+        } 
+        .container { 
+            width: 100%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        } 
+        .description, .code-section { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px; 
+        } 
+        .description p, .code-section pre { 
+            font-size: 1.1em; 
+            margin-bottom: 15px; 
+        } 
+        .code-section { 
+            background-color: #f4f4f4; 
+            font-family: "Courier New", monospace; 
+            overflow-x: auto; 
+        } 
+        .button { 
+            display: block; 
+            width: 100%; 
+            padding: 10px; 
+            background-color: #33a1b7; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 1.2em; 
+            cursor: pointer; 
+            text-align: center; 
+            transition: background-color 0.3s; 
+        } 
+        .button:hover { 
+            background-color: #1f7b8f; 
+        } 
+    </style> 
+</head> 
+<body> 
+ 
+    <header> 
+        <div class="logo">S</div> 
+        <nav class="nav" id="nav"> 
+            <a href="catalog.html">Catalog</a> 
+            <a href="aboutus.html">About us</a> 
+            <a href="portfolio.html">Portfolio</a> 
+            <a href="contact.html">Contacts</a> 
+        </nav> 
+        <div class="burger" onclick="toggleMenu()"> 
+            <div></div> 
+            <div></div>
+            <div></div> 
+          </div> 
+          <div class="menu" id="menu"> 
+              <a href="catalog.html"></a> 
+              <a href="aboutus.html"></a> 
+              <a href="portfolio.html"></a> 
+              <a href="contact.html"></a> 
+          </div> 
+      </header> 
+   
+      <script> 
+          function toggleMenu() { 
+              const menu = document.getElementById('menu'); 
+              menu.classList.toggle('show'); 
+          } 
+      </script> 
+   
+      <div class="container"> 
+          <header> 
+              <h1>S-Company - Продажа девайсов с красивым дизайном и кодом</h1> 
+          </header> 
+   
+          <section class="description"> 
+              <h2>О компании</h2> 
+              <p>Компания <strong>TechDesign</strong> специализируется на продаже высококачественных девайсов, которые не только функциональны, но и обладают потрясающим дизайном. Мы уверены, что технологии должны быть не только удобными, но и эстетичными. Мы предлагаем устройства, которые гармонично сочетаются с передовыми технологиями и современным стилем.</p> 
+              <p>Наши устройства включают смартфоны, планшеты, ноутбуки, умные часы и аксессуары, такие как наушники, зарядные устройства и чехлы. Все наши товары производятся известными брендами и соответствуют самым высоким стандартам качества. Мы создаем не просто гаджеты, а стильные аксессуары, которые становятся неотъемлемой частью вашего образа.</p> 
+          </section> 
+   
+          <section class="code-section"> 
+              <h2>Пример кода для умного устройства</h2> 
+              <p>Ниже приведен пример кода для управления умным устройством, таким как умная лампочка, через API. Мы уверены, что инновационные технологии и красивый дизайн могут идти рука об руку.</p> 
+              <pre> 
+  <code> 
+  // Пример кода для подключения умного устройства через API 
+  const smartDevice = { 
+      name: 'Smart Light Bulb', 
+      status: 'off', 
+      brightness: 50, 
+      color: 'white' 
+  }; 
+   
+  // Функция для включения устройства 
+  function turnOnDevice(device) { 
+      device.status = 'on'; 
+      console.log(`${device.name} is now ${device.status}`); 
+  } 
+   
+  // Функция для изменения яркости 
+  function changeBrightness(device, brightnessLevel) { 
+      if (brightnessLevel >= 0 && brightnessLevel <= 100) { 
+          device.brightness = brightnessLevel; 
+          console.log(`${device.name} brightness is now ${device.brightness}%`); 
+      } else { 
+          console.log('Brightness level must be between 0 and 100'); 
+      } 
+  } 
+   
+  // Функция для изменения цвета 
+  function changeColor(device, color) { 
+      device.color = color; 
+      console.log(`${device.name} color is now ${device.color}`); 
+  } 
+   
+  // Включаем устройство, меняем яркость и цвет 
+  turnOnDevice(smartDevice); 
+  changeBrightness(smartDevice, 80); 
+  changeColor(smartDevice, 'blue'); 
+  </code> 
+              </pre> 
+          </section> 
+   
+          <section class="description"> 
+              <h2>Наши преимущества</h2> 
+              <p>Каждое устройство от <strong>TechDesign</strong> - это сочетание прекрасного дизайна и технологической мощности. Мы предлагаем устройства, которые не только выглядят стильно, но и обеспечивают превосходную производительность. Мы разрабатываем устройства, которые могут интегрироваться в умный дом и позволяют управлять функциональностью через приложения или даже голосовые команды.</p> 
+              <p>Наши устройства соответствуют самым последним трендам в мире технологий, и мы всегда готовы предложить вам самые лучшие решения для дома и офиса.</p> 
+          </section> 
+   
+          <section> 
+              <button src="catalog.html" class="button">Посмотреть каталог девайсов</button> 
+          </section> 
+      </div> 
+   
+  </body> 
+  </html>
